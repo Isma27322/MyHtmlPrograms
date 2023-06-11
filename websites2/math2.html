@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math Equation Calculator</title>
+	<style>
+		.centered {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+	</style>
+	<script>
+		function calculate() {
+			var equation = document.getElementById("equation").value;
+			var resultDiv = document.getElementById("result");
+			try {
+				var result = eval(equation);
+				if (isNaN(result)) {
+					resultDiv.innerHTML = "Error: Invalid input";
+				} else {
+					resultDiv.innerHTML = "Result: " + result;
+				}
+			} catch (error) {
+				resultDiv.innerHTML = "Error: " + error.message;
+			}
+		}
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var input = document.getElementById("equation");
+			input.addEventListener("keyup", function(event) {
+				if (event.key === "Enter") {
+					calculate();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="centered">
+		<h1>Math Equation Calculator</h1>
+		<p>Enter numbers and operators:</p>
+		<input type="text" id="equation" size="50">
+		<br><br>
+		<button type="button" onclick="calculate()">Calculate</button>
+		<br><br>
+		<div id="result"></div>
+	</div>
+</body>
+</html>

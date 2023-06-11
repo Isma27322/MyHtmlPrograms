@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Infinite Random Letters List</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-size: 24px;
+			line-height: 1.5;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+	<ul id="letters-list"></ul>
+
+	<script>
+		const lettersList = document.getElementById("letters-list");
+		let row = document.createElement("li");
+
+		function addLetters() {
+			// Generate an array of 10 random uppercase letters
+			const letters = Array.from({length: 10}, () => String.fromCharCode(Math.floor(Math.random() * 26) + 65));
+			let i = 0;
+			letters.forEach(letter => {
+				if ((i % Math.floor(window.innerWidth / 24)) === 0 && i !== 0) {
+					lettersList.appendChild(row);
+					row = document.createElement("li");
+				}
+				row.appendChild(document.createTextNode(letter));
+				i++;
+			});
+			lettersList.appendChild(row);
+		}
+
+		// Add letters initially
+		addLetters();
+
+		// Add more letters when the bottom of the page is reached
+		window.addEventListener("scroll", () => {
+			if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+				addLetters();
+			}
+		});
+	</script>
+</body>
+</html>
