@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube Video Player</title>
+  </head>
+  <body>
+    <h1>YouTube Video Player</h1>
+    <label for="video-link">Enter a YouTube video link:</label>
+    <input type="text" id="video-link" name="video-link">
+    <br>
+    <button onclick="playVideo()">Play Video</button>
+    <br><br>
+    <div id="video-player"></div>
+    <script>
+      function playVideo() {
+        var link = document.getElementById("video-link").value;
+        var videoId = link.match(/[?&]v=([^&]+)/)[1];
+        var videoPlayer = document.getElementById("video-player");
+        videoPlayer.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+      }
+    </script>
+  </body>
+</html>

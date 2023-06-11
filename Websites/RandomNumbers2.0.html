@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1 {
+        font-size: 32px;
+        position: absolute;
+        text-align: center;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+
+    <script>
+      function getRandomNumber() {
+            return Math.floor(Math.random() * 2001) - 1000;
+        }
+
+
+      function getRandomPosition() {
+        const x = Math.floor(Math.random() * window.innerWidth);
+        const y = Math.floor(Math.random() * window.innerHeight);
+        return [x, y];
+      }
+
+      function addNumber() {
+        const h1 = document.createElement("h1");
+        h1.innerText = getRandomNumber();
+        const [x, y] = getRandomPosition();
+        h1.style.left = x + "px";
+        h1.style.top = y + "px";
+        document.body.appendChild(h1);
+      }
+
+      function updateBodySize() {
+        document.body.style.width = window.innerWidth + "px";
+        document.body.style.height = window.innerHeight + "px";
+      }
+
+      window.addEventListener("resize", updateBodySize);
+      updateBodySize();
+
+      setInterval(addNumber, 0.000000000000000001);
+    </script>
+  </body>
+</html>

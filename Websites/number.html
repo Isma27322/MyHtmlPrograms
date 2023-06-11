@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Example</title>
+	<style>
+		#number {
+			font-size: 48px;
+			font-weight: bold;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#text {
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<div id="text">Here is a random number between -1000 and 1000:</div>
+	<div id="number"></div>
+	<script>
+		document.getElementById("number").innerHTML = Math.floor(Math.random() * 2001) - 1000;
+	</script>
+</body>
+</html>

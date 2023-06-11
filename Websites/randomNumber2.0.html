@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Generator</title>
+	<style>
+		.centered {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+        body {
+			background-color: #03fc1c;
+        }
+        h1 {
+            font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="centered">
+        <h1> Random number generator</h1>
+		<label for="name">Enter your name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="min">Enter minimum number:</label>
+		<input type="number" id="min" name="min"><br><br>
+		<label for="max">Enter maximum number:</label>
+		<input type="number" id="max" name="max"><br><br>
+		<button onclick="generateRandomNumber()">Generate Random Number</button>
+		<p id="result"></p>
+	</div>
+	<script>
+		if (event.key ==="Enter") {
+			generateRandomNumber();
+		}
+		function generateRandomNumber() {
+			var name = document.getElementById("name").value;
+			var min = parseInt(document.getElementById("min").value);
+			var max = parseInt(document.getElementById("max").value);
+			if (min > max) {
+				setTimeout(function(){
+					alert("Please enter a valid range. The minimum number should be less than the maximum number.");
+				}, 1000);
+				setTimeout(function(){
+					alert("Please enter a valid number.");
+				}, 2000);
+				return;
+			}
+			var random = Math.floor(Math.random() * (max - (min - 1))) + min;
+			document.getElementById("result").innerHTML = "Hello, " + name + "!<br><br>Here is a random number between " + min + " and " + max + ":<br><br>" + random;
+		}
+	</script>
+</body>
+</html>
