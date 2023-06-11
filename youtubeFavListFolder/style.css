@@ -1,0 +1,27 @@
+body {
+    background-color: #ADD8E6; /* light blue color */
+}
+
+/* Center the container in the middle of the page */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Center the form elements */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Center the button elements */
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

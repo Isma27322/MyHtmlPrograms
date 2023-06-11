@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YouTube Fav videos List</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadVideos()">
+    <div class="container">
+        <h1>YouTube Fav videos List</h1>
+        <label for="link">YouTube Link:</label>
+        <input type="text" id="link" name="link">
+        <br><br>
+        <label for="name">Video Name:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <button onclick="addVideo()">Add Video</button>
+        <br><br>
+        <label for="videos">Select Video:</label>
+        <select id="videos" name="videos"></select>
+        <br><br>
+        <button onclick="playVideo()">Play Video</button>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
