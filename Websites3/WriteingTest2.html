@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Writeing Test</title>
+</head>
+<body>
+	<h1>Random Letter Generator</h1>
+	<div class="letter" id="letter"></div>
+
+	<script>
+		const fs = require('fs');
+        const content = 'Some content!';
+
+        fs.writeFile('file:///home/chronos/u-c31dbf55c76d19c8bb6ec0c0c1a3ca0071d70b3e/MyFiles/test.txt', content, err => {
+            if (err) {
+                console.error(err);
+            }
+        // file written successfully
+        });
+	</script>
+</body>
+</html>

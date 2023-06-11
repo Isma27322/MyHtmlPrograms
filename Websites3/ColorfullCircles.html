@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Colorful Circle</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+        margin: auto;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var context = canvas.getContext("2d");
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      function draw() {
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
+        var radius = Math.min(canvas.width, canvas.height) / 2 * Math.random();
+        var color = "rgb(" + red + ", " + green + ", " + blue + ")";
+        context.fillStyle = color;
+
+        // Calculate the center of the canvas
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+
+        // Draw the circle centered on the canvas
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fill();
+      }
+
+      window.addEventListener('resize', resizeCanvas, false);
+      resizeCanvas();
+
+      setInterval(function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        draw();
+      }, 1);
+    </script>
+  </body>
+</html>

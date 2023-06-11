@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Sentence Generator</title>
+	<script>
+		// Define an array of sample sentences
+		var sentences = [
+			"The quick brown fox jumps over the lazy dog.",
+			"The cat in the hat sat on the mat.",
+			"All work and no play makes Jack a dull boy.",
+			"To be or not to be, that is the question.",
+			"Life is like a box of chocolates, you never know what you're gonna get.",
+			"I have a dream that one day this nation will rise up and live out the true meaning of its creed."
+		];
+
+		// Define a function to generate a random sentence
+		function generateSentence() {
+			// Select a random sentence from the array
+			var randomIndex = Math.floor(Math.random() * sentences.length);
+			var randomSentence = sentences[randomIndex];
+
+			// Display the random sentence on the page
+			document.getElementById("sentence").innerHTML = randomSentence;
+		}
+	</script>
+</head>
+<body>
+	<h1>Random Sentence Generator</h1>
+	<button onclick="generateSentence()">Generate Sentence</button>
+	<p id="sentence"></p>
+</body>
+</html>

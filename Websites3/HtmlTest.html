@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Letter Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			margin-top: 50px;
+			color: #333;
+		}
+
+		.letter {
+			text-align: center;
+			font-size: 120px;
+			margin-top: 50px;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<h1>Random Letter Generator</h1>
+	<div class="letter" id="letter"></div>
+
+	<script>
+		// Generate a random letter
+		var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		var randomLetter = letters[Math.floor(Math.random() * letters.length)];
+
+		// Display the random letter on the screen
+		document.getElementById('letter').innerHTML = randomLetter;
+	</script>
+</body>
+</html>
